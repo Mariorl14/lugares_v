@@ -3,6 +3,7 @@ package com.lugares_v
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -48,15 +49,15 @@ class MainActivity : AppCompatActivity() {
 
 
         // uTILIZO AUTH PARA HACER EL REGISTRO
-        auth.createUserWithEmailAndPassword(email,clave)
-            .addOnCompleteListener(this){task ->
-
+        auth.createUserWithEmailAndPassword(email,clave).addOnCompleteListener(this) {task ->
                 if(task.isSuccessful) {
                     // se creo el usuario
+                    Log.d("Registrandose","Se registro")
                     val user = auth.currentUser
                     refresca(user)
                 }else {
                     //no se creo el usuario
+                    Log.d("Registrandose","Error de registro")
                     Toast.makeText(baseContext,"Fallo",Toast.LENGTH_LONG).show()
                     refresca(null)
                     //prueba
@@ -74,8 +75,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun haceLogin() {
-        TODO("Not yet implemented")
+        //Recupero info
+        val email = binding.etCorreo.text.toString()
+        val clave = binding.etClave.text.toString()
+
+
+        // uTILIZO AUTH PARA HACER EL REGISTRO
+        auth.signInWithEmailAndPassword(email,clave)
+            .addOnCompleteListener(this){task ->
+                if(task.isSuccessful) {
+                    // se creo el usuario
+                    Log.d("Autenticando","Se autentico")
+                    val user = auth.currentUser
+                    refresca(user)
+                }else {
+                    //no se creo el usuario
+                    Log.d("Autenticando","Error de autentificacion")
+                    Toast.makeText(baseContext,"Fallo",Toast.LENGTH_LONG).show()
+                    refresca(null)
+                    //prueba
+                }
+
+            }
     }
 
+    // Estoi se ejecuta cuando se presenta el app en la pa nntalla, valida si alguien esta logueado
+    public override fun onStart() {
+        super.onStart()
+        val usuario = auth.currentUser
+        refresca(usuario)
+    }
 
 }
