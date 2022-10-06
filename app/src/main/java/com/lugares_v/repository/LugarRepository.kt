@@ -4,7 +4,12 @@ import androidx.lifecycle.LiveData
 import com.lugares_v.data.LugarDao
 import com.lugares_v.model.Lugar
 class LugarRepository(private val lugarDao: LugarDao) {
-    suspend fun addLugar(lugar: Lugar) {
+    suspend fun saveLugar(lugar: Lugar) {
+        if (lugar.id == 0){
+            lugarDao.addLugar(lugar)
+        }else {
+            lugarDao.updateLugar(lugar)
+        }
         lugarDao.addLugar(lugar)
     }
     suspend fun updateLugar(lugar: Lugar) {
