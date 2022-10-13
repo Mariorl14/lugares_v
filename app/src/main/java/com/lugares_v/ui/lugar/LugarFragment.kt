@@ -8,8 +8,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.lugares_v.R
+import com.lugares_v.adapter.LugarAdapter
 import com.lugares_v.databinding.FragmentLugarBinding
+import com.lugares_v.model.Lugar
 import com.lugares_v.viewmodel.LugarViewModel
 
 class LugarFragment : Fragment() {
@@ -28,6 +31,16 @@ class LugarFragment : Fragment() {
 
         binding.addLugarFabBt.setOnClickListener {
             findNavController().navigate(R.id.action_nav_lugar_to_addLugarFragment)
+        }
+
+        //activar el recyceler view
+        val lugarAdapter = LugarAdapter()
+        val reciclador = binding.reciclador
+        reciclador.adapter= lugarAdapter
+        reciclador.layoutManager = LinearLayoutManager(requireContext())
+
+        lugarViewModel.getLugares.observe(viewLifecycleOwner) {
+            lugares -> lugarAdapter.setLugares(lugares)
         }
 
         return binding.root
