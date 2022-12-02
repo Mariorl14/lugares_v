@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">Lugares_v</string>
+    <string name="app_name" translatable="false">Lugares</string>
+    <string name="default_web_client_idg" translatable="false">839614095529-gu14ov512j96kun3m3h27u3g16l0hcf4.apps.googleusercontent.com</string>
+    <string name="google_maps_key" translatable="false">AIzaSyD50stWAq12TDOi0b4QfT3AmfsZ6rGmw1Y</string>
     <string name="tv_correo">Correo</string>
     <string name="tv_clave">Contraseña</string>
+    <string name="msg_fallo_registro">"Fallo la creación del usuario "</string>
+    <string name="msg_fallo_login">Fallos la autenticacion del usuario</string>
+
+
+    <string name="menu_lugar">Lugares</string>
+    <string name="menu_gallery">Mapa</string>
+    <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_principal">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -9,28 +18,21 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
-    <string name="menu_lugar">Lugares</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
-    <string name="msg_nombre">Nombre del Lugar</string>
-    <string name="msg_correo">Email (correo@xxx.xxx)</string>
-    <string name="msg_telefono">Telefono (9999-9999)</string>
+    <string name="msg_nombre">Nombre del lugar</string>
+    <string name="msg_correo">Correo(elcorreo@xxxxx.xxx)</string>
+    <string name="msg_telefono">Telefono(9999-9999)</string>
     <string name="msg_web">Sitio Web</string>
-    <string name="bt_add_lugar">Agregar Lugar</string>
-    <string name="bt_update_lugar">Actualizar Lugar</string>
-    <string name="msg_lugar_added">Lugar Agregado</string>
-    <string name="msg_lugar_updated">Lugar Actualizado</string>
-    <string name="msg_data">Faltan Datos</string>
-    <string name="bt_delete_lugar">Eliminar Lugar</string>
-    <string name="msg_lugar_deleted">Lugar Eliminado</string>
-    <string name="msg_lugar_pregunta">Seguro de querer borrar el lugar?</string>
-    <string name="msg_si">Si</string>
-    <string name="msg_no">No</string>
-
+    <string name="bt_addLugar">Agregar Lugar</string>
+    <string name="bt_updateLugar">Actualizar Lugar</string>
+    <string name="msg_lugar_added">Lugar agregado</string>
+    <string name="msg_data">"faltan datos por ingresar "</string>
+    <string name="msg_lugar_update">Se actualizo el lugar</string>
+    <string name="delete">Eliminar lugar</string>
+    <string name="seguroBorrar">Esta seguro de eliminar este lugar </string>
+    <string name="si">si</string>
+    <string name="No">No</string>
 
     <string name="msg_enviar_correo">Enviar correo electrónico</string>
     <string name="msg_phone_call">Realizar llamada telefónica</string>
@@ -42,8 +44,22 @@
     <string name="tv_altura_lb">Altura</string>
     <string name="msg_saludos">Saludos amigos</string>
     <string name="msg_mensaje_correo">Le escribo este correo para</string>
+    <string name="msg_datos">Faltan datos</string>
     <string name="error">Error</string>
 
-
-
+    <string name="msgEscucharAudio">Escuchar nota de audio</string>
+    <string name="msg_imagen">Imagen del lugar</string>
+    <string name="graba_pausa">Graba o pausa grabación</string>
+    <string name="escuchaPlay">Escucha grabación</string>
+    <string name="delete_nota">Borra nota de audio</string>
+    <string name="play_nota">Escuchar nota de audio</string>
+    <string name="rec_stop_nota">Graba o detiene nota de audio</string>
+    <string name="take_photo">Toma foto</string>
+    <string name="rotate_l">Rota izquierda</string>
+    <string name="rotale_r">Rota a la derecha</string>
+    <string name="msg_graba_audio">Grabando nota de audio</string>
+    <string name="msg_detener_audio">Nota de audio detenida</string>
+    <string name="msg_subiendo_audio">Subiendo Nota Audio</string>
+    <string name="msg_subiendo_imagen">Subiendo imagen</string>
+    <string name="todo">todo</string>
 </resources>
